@@ -13,11 +13,11 @@ class Config:
 
     # Backends
     STT_BACKEND: str = "whisper_local"   # local Whisper
-    LLM_BACKEND: str = "ollama"          # use Ollama on this Pi
-    TTS_BACKEND: str = "stub"            # we'll swap to real TTS later
+    LLM_BACKEND: str = "ollama"          # Ollama on this Pi for llama3.2 1b
+    TTS_BACKEND: str = "stub"            # swapped for TTS 
 
     # Ollama settings
     OLLAMA_HOST: str = "http://127.0.0.1:11434"
-    OLLAMA_MODEL: str = "llama3.2:1b"    # exactly as shown in `ollama list`
+    OLLAMA_MODEL: str = "llama3.2:1b"    # exact ollama model for running llama
 
 config = Config()
