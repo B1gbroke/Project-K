@@ -3,7 +3,7 @@
 import subprocess
 from pathlib import Path
 
-# Path to your Piper voice model
+# Path to  Piper voice model
 PIPER_MODEL_PATH = (
     Path.home()
     / ".local"
@@ -19,7 +19,7 @@ PIPER_MODEL_PATH = (
 # Temp WAV file
 TMP_WAV = Path("/tmp/assistant_tts.wav")
 
-# ALSA device that you just tested successfully
+# ALSA device that was tested successfully
 ALSA_DEVICE = "plughw:2,0"
 
 
@@ -32,7 +32,7 @@ def speak(text: str) -> None:
     if not text:
         return
 
-    # 1) Generate WAV with Piper
+    # 1. Generate WAV with Piper
     piper_proc = subprocess.Popen(
         [
             "piper",
@@ -52,7 +52,7 @@ def speak(text: str) -> None:
         print(f"[TTS] Piper exited with code {piper_proc.returncode}")
         return
 
-    # 2) Play WAV with aplay on the I2S amp
+    # 2. Play WAV with aplay on the I2S amp (output on speaker)
     cmd = ["aplay", "-q", "-D", ALSA_DEVICE, str(TMP_WAV)]
 
     try:
