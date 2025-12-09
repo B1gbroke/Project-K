@@ -1,14 +1,14 @@
 # src/nlp/stt.py
 from src.core.config import config
 
-# Lazy-load the model so startup is faster
+# Lazy-load model so startup is faster
 _whisper_model = None
 
 def _get_model():
     global _whisper_model
     if _whisper_model is None:
         import whisper
-        # "tiny" is fastest on a Pi; you can try "base" later
+        # "tiny" is fastest on Pi; can try "base" later
         print("[STT] Loading Whisper model 'tiny'...")
         _whisper_model = whisper.load_model("tiny")
     return _whisper_model
