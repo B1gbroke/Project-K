@@ -3,7 +3,7 @@ from src.core.pipeline import AssistantPipeline
 
 def main():
     assistant = AssistantPipeline()
-    print("Smart assistant pipeline demo (USB mic + local Whisper + Ollama).")
+    print("Smart Assistant Ready!")
     print("Press Ctrl+C to exit.\n")
 
     try:
