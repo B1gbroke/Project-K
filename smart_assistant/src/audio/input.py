@@ -7,6 +7,7 @@ from src.core.config import config
 def record_to_file(output_path: str):
     """Record a short clip from the selected input device and save as WAV."""
     duration = config.RECORD_SECONDS
+    dev_info = sd.query_devices(config.INPUT_DEVICE_INDEX, 'input') #Grab info for selected input device
     sample_rate = config.SAMPLE_RATE
     channels = config.CHANNELS
     
